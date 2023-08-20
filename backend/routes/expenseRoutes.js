@@ -1,19 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Trans = require('../models/financeModel');
-
-// API route for Create Operation using POST
-router.post("/add", (req, res) => {
-    Trans.create({
-        transaction: req.body.transaction,
-        type: req.body.type,
-        amount: req.body.amount,
-        date: req.body.date,
-        reference: req.body.reference
-    })
-    .then((doc) => console.log(doc))
-    .catch((err) => console.log(err));
-});
+const Trans = require('../models/expenseModel');
 
 // API route for Read Operation using GET
 router.get("/docs", (req, res) => {
