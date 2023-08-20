@@ -5,7 +5,6 @@ Language - MERN Stack
 Functions  
   &nbsp;&nbsp;Finance Management  
   &nbsp;&nbsp;Supplier, Order & Inventory Management  
-  &nbsp;&nbsp;Resource Management  
-  &nbsp;&nbsp;Shopping & Advertisment Management  
+  &nbsp;&nbsp;Store Directory  
   
 Special Feature - Virtual Navigation
