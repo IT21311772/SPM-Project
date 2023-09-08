@@ -1,10 +1,16 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Transactions from './Components/Transactions';
+import AddTransaction from './Components/addTransactions';
 
 function App() {
   return (
     <div className="App">
-      <h1>SPM Project</h1>
+        <Routes>
+          <Route path='/' element={<Transactions />} />
+          <Route path='/add' element={<AddTransaction />} />
+          <Route path='/add/transactions' element={<Transactions />} />
+        </Routes>
     </div>
   );
 }
