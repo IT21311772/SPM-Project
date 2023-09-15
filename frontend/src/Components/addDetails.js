@@ -31,14 +31,78 @@ function CreatePost () {
             };
         });
     };
-//add transaction form validation
+
+    const [amountError, setAmountError] = useState("");
+    const [typeError, setTypeError] = useState("");
+    const [categoryError, setCategoryError] = useState("");
+    const [descriptionError, setDescriptionError] = useState("");
+    const [referenceError, setReferenceError] = useState("");
+
+    const validationForm = () => {
+        let valid = true;
+
+        const Amount = document.getElementById('amount');
+        if (data.amount == '') {
+            Amount.setCustomValidity('Please Enter the Amount');
+            setAmountError("Please Enter the Amount");
+            valid = false;
+        }else if (isNaN(data.amount)) {
+            Amount.setCustomValidity('Please Enter a valid Amount');
+            setAmountError("Please Enter a valid Amount");
+            valid = false;
+        } else {
+            Amount.setCustomValidity('');
+            setAmountError("");
+        }
+
+        const Type = document.getElementById('type');
+        if (data.type == '') {
+            Type.setCustomValidity('Please select a Type');
+            setTypeError("Please select a Type");
+            valid = false;
+        } else {
+            Type.setCustomValidity('');
+            setTypeError("");
+        }
+
+        const Category = document.getElementById('category');
+        if (data.category == '') {
+            Category.setCustomValidity('Please select a Category');
+            setCategoryError("Please select a Category");
+            valid = false;
+        } else {
+            Category.setCustomValidity('');
+            setCategoryError("");
+        }
+
+        const Description = document.getElementById('description');
+        if (data.description == '') {
+            Description.setCustomValidity('Please enter a Description');
+            setDescriptionError("Please enter a Description");
+            valid = false;
+        } else {
+            Description.setCustomValidity('');
+            setDescriptionError("");
+        }
+
+        const Reference = document.getElementById('reference');
+        if (data.reference == '') {
+            Reference.setCustomValidity('Please enter a reference');
+            setReferenceError("Please enter a Reference");
+            valid = false;
+        } else {
+            Reference.setCustomValidity('');
+            setReferenceError("");
+        }
+
+        return valid;
+    }
+
+    //add transaction form validation
     const handleClick = (event) => {
         event.preventDefault();
 
-        if( !data.amount || !data.type || !data.category || !data.date || !data.description || !data.reference){
-            alert("Please fill all the fields")
-        }
-        else{
+        if(validationForm()){
             axios.post("/api/Fin/add", data)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
@@ -75,26 +139,32 @@ function CreatePost () {
             <Form className="Form">
                 <Form.Group className="Form-Group">
                     <Form.Control className="Form-Control" 
+                        id="amount"
                         name="amount" 
                         value={data.amount}
-                        placeholder="Amount (LKR)"
+                        placeholder="Enter Amount (LKR)"
                         onChange={handleChange}
                         style={{width:"80%", marginLeft:"10%"}}
                         required />
+                    { amountError && <div className="error" style={{marginLeft:"10%"}}>{amountError}</div> }
                     
-                    <Form.Select name="type" className="Form-Control" 
+                    <Form.Select className="Form-Control" 
+                        id="type"
+                        name="type"
                         value={data.type} 
                         placeholder="Transaction Type"
                         onChange={handleChange} 
                         style={{width:"80%", marginLeft:"10%"}}
                         required>
-                            <option>Transaction Type</option>
+                            <option>Select Transaction Type</option>
                             <option>Income</option>
                             <option>Expense</option>
-                            
                     </Form.Select>
+                    { typeError && <div className="error" style={{marginLeft:"10%"}}>{typeError}</div> }
 
-                    <Form.Select name="category" className="Form-Control" 
+                    <Form.Select className="Form-Control" 
+                        id="category"
+                        name="category"
                         value={data.category} 
                         placeholder="Category"
                         onChange={handleChange} 
@@ -102,16 +172,13 @@ function CreatePost () {
                         required>
                             <option>Select Category</option>
                             <option>Salary</option>
-                            <option>Stationery</option>
+                            <option>Shop Fees</option>
                             <option>Supplier charges</option>
-                            <option>Food</option>
-                            <option>Transport</option>
                             <option>Bills</option>
-                            <option>Medical</option>
                             <option>TAX</option>
-                            <option>Services</option>
-                            
+                            <option>Services</option> 
                     </Form.Select>
+                    { categoryError && <div className="error" style={{marginLeft:"10%"}}>{categoryError}</div> }
 
                     <Form.Control className="Form-Control"
                         name="date" 
@@ -121,24 +188,30 @@ function CreatePost () {
                         style={{width:"80%", marginLeft:"10%"}}
                         readOnly={true}
                         required />
+
                     <Form.Control className="Form-Control"
+                        id="description"
                         name="description" 
                         value={data.description}
-                        placeholder="Description"
+                        placeholder="Enter Description"
                         onChange={handleChange} 
                         style={{width:"80%", marginLeft:"10%"}}
                         required />
+                    { descriptionError && <div className="error" style={{marginLeft:"10%"}}>{descriptionError}</div> }
+
                     <Form.Control className="Form-Control"
+                        id="reference"
                         name="reference" 
                         value={data.reference}
-                        placeholder="Reference"
+                        placeholder="Enter Reference"
                         onChange={handleChange} 
                         style={{width:"80%", marginLeft:"10%"}}
                         required />
+                    { referenceError && <div className="error" style={{marginLeft:"10%"}}>{referenceError}</div> }
                 </Form.Group>
                 <br />
-                < button style={{borderRadius:"5px", background:"#b30059", padding:"1.5%", width:"45%", fontSize:"17px", 
-                paddingLeft:"5px", paddingRight:"5px", border:"#b30059"}} onClick={handleClick}>ADD TRANSACTION</button>
+                < button style={{borderRadius:"5px", background:"#A7D5E5", padding:"1.5%", width:"45%", fontSize:"17px", 
+                paddingLeft:"5px", paddingRight:"5px", border:"#A7D5E5"}} onClick={handleClick}>ADD TRANSACTION</button>
             </Form>
             <br />
             {/* <br />
