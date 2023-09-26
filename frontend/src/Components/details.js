@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
 import './transactions.css';
 import NavBar from "./navBar";
+import Footer from "./footer";
 
 
 function App() {
@@ -378,6 +379,7 @@ return (
         ) : (
           ""
         )}  
+        <Footer />
   </div>
 );
 }
