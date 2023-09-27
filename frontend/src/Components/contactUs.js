@@ -9,7 +9,7 @@ function Contact() {
   return (
     <div>
       <Header />
-      <div className="content">
+      <div className="card">
         <div className="call">
           <h2 className='header'>Talk to Us</h2>
           <p className='para'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus vitae animi qui sapiente iste vel explicabo soluta 
