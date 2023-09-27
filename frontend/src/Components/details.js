@@ -5,9 +5,6 @@ import {Form, InputGroup } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
 import './transactions.css';
-import NavBar from "./navBar";
-import Footer from "./footer";
-
 
 function App() {
 
@@ -155,8 +152,7 @@ function App() {
 
 
 return (
-    <div className="finance">   
-    <NavBar />    
+    <div className="finance">     
       <br /><br />
         <Modal show={show} onHide={handleClose} >
             <Modal.Header closeButton>
@@ -379,7 +375,6 @@ return (
         ) : (
           ""
         )}  
-        <Footer />
   </div>
 );
 }
