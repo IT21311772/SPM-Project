@@ -151,8 +151,8 @@ function App() {
     };
 
 
-return (
-    <div className="finance">     
+return ( 
+    <div className="finance">   
       <br /><br />
         <Modal show={show} onHide={handleClose} >
             <Modal.Header closeButton>
@@ -271,6 +271,7 @@ return (
                 
             </Modal.Footer>
         </Modal>
+        
 
         {data ? (
             
