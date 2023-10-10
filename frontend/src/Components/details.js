@@ -1,25 +1,22 @@
 import { useEffect,useState } from "react";
 import axios from "axios";
 import {Form, InputGroup } from "react-bootstrap";
-// import {useNavigate } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
 import './transactions.css';
 
 function App() {
-
+    // Use of useState
     const [data, setData] = useState([]);
     const [updatedPost, setUpdatedPost] = useState({})
     const [search, setSearch] = useState('');
     const [income, SetIncome] = useState(0);
     const [expenses, SetExpenses] = useState(0);
-    console.log(search);
-
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
+    // Use of useEffect
     useEffect(() => {
         axios.get("/api/Fin/trans")
             .then((res) => {
@@ -28,7 +25,6 @@ function App() {
             })
             .catch((err) => console.log(err));
     }, []);
-
 
     useEffect(() => { 
         let amount1 = 0;
@@ -62,6 +58,7 @@ function App() {
 
     };
 
+    // Update Function
     const updatePost = (post) => {
     setUpdatedPost(post);
     handleShow();
@@ -206,14 +203,11 @@ return (
                             onChange={handleChange}>
                             <option>Select Category</option>
                             <option>Salary</option>
-                            <option>Stationery</option>
+                            <option>Shop Fees</option>
                             <option>Supplier charges</option>
-                            <option>Food</option>
-                            <option>Transport</option>
                             <option>Bills</option>
-                            <option>Medical</option>
                             <option>TAX</option>
-                            <option>Services</option>
+                            <option>Services</option> 
                             </Form.Select>
                         <Form.Control 
                             style={{width: "80%",
