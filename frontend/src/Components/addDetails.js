@@ -128,95 +128,93 @@ function CreatePost () {
             reference:"",
         })
     }
-
-
-
     return (
         <div className="finance-create">
-
-        <div className="Create-post">
-            <h3 className="title">Add Transaction Details</h3><br />
-            <Form className="Form">
-                <Form.Group className="Form-Group">
-                    <Form.Control className="Form-Control" 
-                        id="amount"
-                        name="amount" 
-                        value={data.amount}
-                        placeholder="Enter Amount (LKR)"
-                        onChange={handleChange}
-                        style={{width:"80%", marginLeft:"10%"}}
-                        required />
-                    { amountError && <div className="error" style={{marginLeft:"10%"}}>{amountError}</div> }
+            <div className="Create-post">
+                <h3 className="title">Add Transaction Details</h3><br />
+                <Form className="Form">
+                    <Form.Group className="Form-Group">
+                        <Form.Control className="Form-Control" 
+                            id="amount"
+                            name="amount" 
+                            value={data.amount}
+                            placeholder="Enter Amount (LKR)"
+                            onChange={handleChange}
+                            style={{width:"80%", marginLeft:"10%"}}
+                            required />
+                        { amountError && <div className="error" style={{marginLeft:"10%"}}>{amountError}</div> }
                     
-                    <Form.Select className="Form-Control" 
-                        id="type"
-                        name="type"
-                        value={data.type} 
-                        placeholder="Transaction Type"
-                        onChange={handleChange} 
-                        style={{width:"80%", marginLeft:"10%"}}
-                        required>
-                            <option>Select Transaction Type</option>
-                            <option>Income</option>
-                            <option>Expense</option>
-                    </Form.Select>
-                    { typeError && <div className="error" style={{marginLeft:"10%"}}>{typeError}</div> }
+                        <Form.Select className="Form-Control" 
+                            id="type"
+                            name="type"
+                            value={data.type} 
+                            placeholder="Transaction Type"
+                            onChange={handleChange} 
+                            style={{width:"80%", marginLeft:"10%"}}
+                            required>
+                                <option>Select Transaction Type</option>
+                                <option>Income</option>
+                                <option>Expense</option>
+                        </Form.Select>
+                        { typeError && <div className="error" style={{marginLeft:"10%"}}>{typeError}</div> }
 
-                    <Form.Select className="Form-Control" 
-                        id="category"
-                        name="category"
-                        value={data.category} 
-                        placeholder="Category"
-                        onChange={handleChange} 
-                        style={{width:"80%", marginLeft:"10%"}}
-                        required>
-                            <option>Select Category</option>
-                            <option>Salary</option>
-                            <option>Shop Fees</option>
-                            <option>Supplier charges</option>
-                            <option>Bills</option>
-                            <option>TAX</option>
-                            <option>Services</option> 
-                    </Form.Select>
-                    { categoryError && <div className="error" style={{marginLeft:"10%"}}>{categoryError}</div> }
+                        <Form.Select className="Form-Control" 
+                            id="category"
+                            name="category"
+                            value={data.category} 
+                            placeholder="Category"
+                            onChange={handleChange} 
+                            style={{width:"80%", marginLeft:"10%"}}
+                            required>
+                                <option>Select Category</option>
+                                <option>Salary</option>
+                                <option>Shop Fees</option>
+                                <option>Supplier charges</option>
+                                <option>Bills</option>
+                                <option>TAX</option>
+                                <option>Services</option> 
+                        </Form.Select>
+                        { categoryError && <div className="error" style={{marginLeft:"10%"}}>{categoryError}</div> }
 
-                    <Form.Control className="Form-Control"
-                        name="date" 
-                        value={data.date}
-                        placeholder="Date"
-                        onChange={handleChange} 
-                        style={{width:"80%", marginLeft:"10%"}}
-                        readOnly={true}
-                        required />
+                        <Form.Control className="Form-Control"
+                            name="date" 
+                            value={data.date}
+                            placeholder="Date"
+                            onChange={handleChange} 
+                            style={{width:"80%", marginLeft:"10%"}}
+                            readOnly={true}
+                            required />
 
-                    <Form.Control className="Form-Control"
-                        id="description"
-                        name="description" 
-                        value={data.description}
-                        placeholder="Enter Description"
-                        onChange={handleChange} 
-                        style={{width:"80%", marginLeft:"10%"}}
-                        required />
-                    { descriptionError && <div className="error" style={{marginLeft:"10%"}}>{descriptionError}</div> }
+                        <Form.Control className="Form-Control"
+                            id="description"
+                            name="description" 
+                            value={data.description}
+                            placeholder="Enter Description"
+                            onChange={handleChange} 
+                            style={{width:"80%", marginLeft:"10%"}}
+                            required />
+                        { descriptionError && <div className="error" style={{marginLeft:"10%"}}>{descriptionError}</div> }
 
-                    <Form.Control className="Form-Control"
-                        id="reference"
-                        name="reference" 
-                        value={data.reference}
-                        placeholder="Enter Reference"
-                        onChange={handleChange} 
-                        style={{width:"80%", marginLeft:"10%"}}
-                        required />
-                    { referenceError && <div className="error" style={{marginLeft:"10%"}}>{referenceError}</div> }
-                </Form.Group>
+                        <Form.Control className="Form-Control"
+                            id="reference"
+                            name="reference" 
+                            value={data.reference}
+                            placeholder="Enter Reference"
+                            onChange={handleChange} 
+                            style={{width:"80%", marginLeft:"10%"}}
+                            required />
+                        { referenceError && <div className="error" style={{marginLeft:"10%"}}>{referenceError}</div> }
+                    </Form.Group>
+                    <br />
+                    <button style={{
+                        borderRadius:"5px", background:"#A7D5E5", 
+                        padding:"1.5%", width:"45%", 
+                        fontSize:"17px", paddingLeft:"5px", 
+                        paddingRight:"5px", border:"#A7D5E5"}} 
+                    onClick={handleClick}>ADD TRANSACTION</button>
+                </Form>
                 <br />
-                < button style={{borderRadius:"5px", background:"#A7D5E5", padding:"1.5%", width:"45%", fontSize:"17px", 
-                paddingLeft:"5px", paddingRight:"5px", border:"#A7D5E5"}} onClick={handleClick}>ADD TRANSACTION</button>
-            </Form>
-            <br />
-            {/* <br />
-            <button style={{borderRadius:"5px", background:"#a66f72", padding:"0.5%"}} onClick={() => navigate(-1)}> BACK </button>   */}
-        </div>
+            </div>
         </div>
     );
 }
