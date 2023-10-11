@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import './Signup.css';
 import Image from '../Images/Admin.jpeg';
+import { Link } from 'react-router-dom';
 
 function SignupForm() {
   const [formData, setFormData] = useState({
@@ -133,6 +134,7 @@ function SignupForm() {
                     paddingRight:"5px", border:"#A7D5E5"}}>
           Sign Up
         </button>
+        <p style={{marginTop:"5%", marginLeft:"23%"}}>Already have an account?<Link to='/login' style={{textDecoration:"none", color:"#dac693"}}> Login</Link></p>
       </Form>
       </div>
       <div className="adminImage">
