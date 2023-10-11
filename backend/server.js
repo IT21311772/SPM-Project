@@ -14,9 +14,11 @@ app.use(cors());
 
 // Import the routes
 const financeRoutes = require('./routes/financeRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 // Routes
 app.use("/api/Fin", financeRoutes);
+app.use("/api/User", userRoutes);
 
 // Connect the database
 mongoose

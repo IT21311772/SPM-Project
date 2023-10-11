@@ -9,6 +9,11 @@ function AdminNavBar() {
         setDropdownOpen(!isDropdownOpen);
     };
 
+    const handleSignout = () => {
+        // Implement signout logic here, e.g., clearing authentication tokens
+        // You may also redirect to the login page after signing out
+    };
+
     return (
         <div className="nav-container">
             <nav className="navbar">
@@ -26,9 +31,9 @@ function AdminNavBar() {
                         >
                             <b>Finance</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/trans">Finance</Link>
-                                <Link to="/inventory">Visualization</Link>
-                                <Link to="/fin/report">Finance Report</Link>
+                                <Link to="/trans" className='inside-link'>Finance</Link>
+                                <Link to="/inventory" className='inside-link'>Visualization</Link>
+                                <Link to="/fin/report" className='inside-link'>Finance Report</Link>
                             </div>
                         </div>
                     </li>
@@ -39,8 +44,8 @@ function AdminNavBar() {
                         >
                             <b>Supplier</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance">Finance</Link>
-                                <Link to="/inventory">Inventory</Link>
+                                <Link to="/finance" className='inside-link'>Finance</Link>
+                                <Link to="/inventory" className='inside-link'>Inventory</Link>
                             </div>
                         </div>
                     </li>
@@ -51,8 +56,8 @@ function AdminNavBar() {
                         >
                             <b>Order</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance">Finance</Link>
-                                <Link to="/inventory">Inventory</Link>
+                                <Link to="/finance" className='inside-link'>Finance</Link>
+                                <Link to="/inventory" className='inside-link'>Inventory</Link>
                             </div>
                         </div>
                     </li>
@@ -63,8 +68,8 @@ function AdminNavBar() {
                         >
                             <b>Inventory</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance">Finance</Link>
-                                <Link to="/inventory">Inventory</Link>
+                                <Link to="/finance" className='inside-link'>Finance</Link>
+                                <Link to="/inventory" className='inside-link'>Inventory</Link>
                             </div>
                         </div>
                     </li>
@@ -75,8 +80,8 @@ function AdminNavBar() {
                         >
                             <b>Stores</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance">Finance</Link>
-                                <Link to="/inventory">Inventory</Link>
+                                <Link to="/finance" className='inside-link'>Finance</Link>
+                                <Link to="/inventory" className='inside-link'>Inventory</Link>
                             </div>
                         </div>
                     </li>
