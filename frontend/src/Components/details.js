@@ -10,7 +10,6 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'; // Import the "plus"
 import { faSort } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp91 } from '@fortawesome/free-solid-svg-icons';
 
-
 function App() {
     // Use of useState
     const [data, setData] = useState([]);
@@ -392,6 +391,7 @@ return (
                         );
                     })}
                 </table>
+                <br /><br />
             </div>
         </div>
         ) : (

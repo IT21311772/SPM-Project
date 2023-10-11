@@ -32,7 +32,7 @@ function AdminNavBar() {
                             <b>Finance</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
                                 <Link to="/trans" className='inside-link'>Finance</Link>
-                                <Link to="/inventory" className='inside-link'>Visualization</Link>
+                                <Link to="/chart" className='inside-link'>Visualization</Link>
                                 <Link to="/fin/report" className='inside-link'>Finance Report</Link>
                             </div>
                         </div>
