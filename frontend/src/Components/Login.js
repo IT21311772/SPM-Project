@@ -56,7 +56,7 @@ const handleLogin = async (e) => {
             onChange={(e) => setEmail(e.target.value)}
             required
             id='email'
-            placeholder='Enter Username'
+            placeholder='Enter Email'
             style={{marginBottom:"5%"}}
           />
 
@@ -81,7 +81,7 @@ const handleLogin = async (e) => {
           paddingRight:"5px", border:"#A7D5E5"}}>
           Login
         </button><br />
-        <p style={{marginTop:"5%", marginLeft:"23%"}}>Don't have an account?<Link to='/' style={{textDecoration:"none", color:"#dac693"}}> Sign Up</Link></p>
+        <p style={{marginTop:"5%", marginLeft:"23%"}}>Don't have an account?<Link to='/register' style={{textDecoration:"none", color:"#dac693"}}> Sign Up</Link></p>
       </Form>
       </div>
       <div className="adminImage">
