@@ -1,0 +1,46 @@
+/* Footer.css */
+
+/* Style the footer */
+.footer {
+    background-color: #373B61;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  /* Style the footer content */
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Style the logo in the footer */
+  .footer-logo img {
+    max-width: 100px;
+  }
+  
+  /* Style the contact information in the footer */
+  .footer-info {
+    text-align: left;
+  }
+  
+  /* Style links in the footer if needed */
+  .footer-info a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Style social icons */
+  .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  /* Add any additional styling as needed for your specific design */
+  

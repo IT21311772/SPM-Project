@@ -1,0 +1,30 @@
+.App {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+  }
+  
+  .btn-func{
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    background-color:#373B61;
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    margin: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .btn-logout{
+    padding: 0.5%;
+    margin-right: 3%;
+    border-radius: 10px;
+    border: none;
+    width: 6%;
+    font-size: 18px;
+    color: white;
+    background-color: #b30059;
+    font-family: mulish,sans-serif; 
+  }
+  
