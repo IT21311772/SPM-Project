@@ -45,10 +45,10 @@ function App() {
           />
           <Route 
             path="/fin/add" 
-            element={isAuthenticated ? <AddTransactions /> : <Login />} />
+            element={ <AddTransactions /> } />
           <Route
             path="/fin/add/trans"
-            element={isAuthenticated ? <Transactions /> : <Login />}
+            element={ <Transactions /> }
           />
           <Route path="/fin/report" element={<FinanceReport />} />
           <Route path="/about" element={<About />} />
