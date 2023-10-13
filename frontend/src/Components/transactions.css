@@ -81,6 +81,55 @@ font-weight: bolder;
 border-radius: 10%;
 }
 
+.balance .data .income:hover{
+  color: #2f86c4;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+
+.balance .data .expense:hover{
+  color: #2f86c4;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+
+.balance .data .profit:hover{
+  color: #2f86c4;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+
+.balance .in:hover{
+  color: #2f86c4;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+
+.balance .ex:hover{
+  color: #2f86c4;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+
+.balance .pr:hover{
+  color: #2f86c4;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+
+.newContainer .line{
+  color: #2f86c4;
+  border: 1px solid;
+  margin-bottom: 6%;
+  margin-top: 2%;
+}
+
 .reportincome{
 font-size: 18px;
 font-weight: bold;
@@ -135,4 +184,25 @@ background-color: #EDEFFE;
 
 .finance .container .content {
 background-color: #EDEFFE;
+}
+
+.newContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newContainer .balance .data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newContainer button {
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120%;
+  margin-left: -110%;
 }

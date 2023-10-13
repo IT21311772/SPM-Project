@@ -1,25 +1,27 @@
 import { useEffect,useState } from "react";
 import axios from "axios";
 import {Form, InputGroup } from "react-bootstrap";
-// import {useNavigate } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
 import './transactions.css';
+import AdminNavBar from "./AdminNavBar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
+import { faPlus } from '@fortawesome/free-solid-svg-icons'; // Import the "plus" icon
+import { faSort } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp91 } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
-
+    // Use of useState
     const [data, setData] = useState([]);
     const [updatedPost, setUpdatedPost] = useState({})
     const [search, setSearch] = useState('');
     const [income, SetIncome] = useState(0);
     const [expenses, SetExpenses] = useState(0);
-    console.log(search);
-
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
+    // Use of useEffect
     useEffect(() => {
         axios.get("/api/Fin/trans")
             .then((res) => {
@@ -28,7 +30,6 @@ function App() {
             })
             .catch((err) => console.log(err));
     }, []);
-
 
     useEffect(() => { 
         let amount1 = 0;
@@ -62,6 +63,7 @@ function App() {
 
     };
 
+    // Update Function
     const updatePost = (post) => {
     setUpdatedPost(post);
     handleShow();
@@ -152,7 +154,8 @@ function App() {
 
 
 return ( 
-    <div className="finance">   
+    <div className="finance">  
+    <AdminNavBar /> 
       <br /><br />
         <Modal show={show} onHide={handleClose} >
             <Modal.Header closeButton>
@@ -206,14 +209,11 @@ return (
                             onChange={handleChange}>
                             <option>Select Category</option>
                             <option>Salary</option>
-                            <option>Stationery</option>
+                            <option>Shop Fees</option>
                             <option>Supplier charges</option>
-                            <option>Food</option>
-                            <option>Transport</option>
                             <option>Bills</option>
-                            <option>Medical</option>
                             <option>TAX</option>
-                            <option>Services</option>
+                            <option>Services</option> 
                             </Form.Select>
                         <Form.Control 
                             style={{width: "80%",
@@ -267,112 +267,133 @@ return (
                 border:"#373B61", marginRight:"25%", color:"white"}} onClick={handleClose}>
                     Close
                 </button>
-                <br />
-                
+                <br /> 
             </Modal.Footer>
         </Modal>
-        
-
         {data ? (
-            
             <div className="content">
-            
             <Form>
-                <InputGroup className="my-1" style={{width:"20%", marginLeft:"75%", color:"#373B61", borderColor:"#373B61%"}}>
-                    <Form.Control 
-                    onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search here"/>
+                <InputGroup className="my-1" style={{ width: "20%", marginLeft: "75%", color: "#373B61", borderColor: "#373B61" }}>
+                    <Form.Control
+                        style={{ color: "#373B61", borderColor: "#373B61" }}
+                        onChange={(e) => setSearch(e.target.value)}
+                        placeholder="Search here"
+                    />
                 </InputGroup>
             </Form>
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style={{borderRadius:"5px", background:"#373B61", padding:"0.5%", border:"#373B61"}}><Link to="/fin/add" style={{color:"#EDEFFE", textDecoration:"none"}}>Add Transactions</Link></button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style={{borderRadius:"5px", background:"#373B61", padding:"0.5%", border:"#373B61"}}><Link to="/fin/report" style={{color:"#EDEFFE", textDecoration:"none"}}>Finance Report</Link></button>
-            
-                <br /><br />
                 <center>
-                    <h1 style={{color:"#373B61", fontWeight:"bolder", fontSize:"50px"}}>Income & Expense</h1>
+                    <h1 style={{color:"#373B61", fontWeight:"bolder", fontSize:"50px"}}>O P A L Outlook Finance Management</h1>
                 </center>
 
-                <div className="container">
-                <button onClick={()=>quickSorting('type') }>Sort by Type</button>&nbsp;
-                <button onClick={()=>sorting('amount') }>Sort by Amount</button>&nbsp;
-                </div>
-                <br />
-                <div className="container">
-                    <div style={{textAlign:"right", fontSize:"20px", fontWeight:"bold"}}>
-                        Income - LKR. 
-                        <span>{income} </span>
+                <button
+                    style={{
+                        borderRadius: "5px",
+                        background: "#373B61",
+                        padding: "0.5%",
+                        border: "#373B61",
+                        display: "flex",
+                        alignItems: "center", // Center icon and text vertically
+                        width: "35px",
+                        height: "35px",
+                        marginLeft: "91.5%"
+                    }}
+                >
+                    <Link to="/fin/add" style={{ color: "#EDEFFE", textDecoration: "none", display: "flex", alignItems: "center" }}>
+                        <FontAwesomeIcon icon={faPlus} style={{marginLeft: "4px"}} />
+                    </Link>
+                </button>&nbsp; 
+
+                <div className="newContainer">
+                    <div className="balance" style={{marginLeft: "6%"}}>
+                        <div className="data">
+                            <div className="income">
+                                Income &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div className="expense">
+                                Expenses &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div className="profit">
+                                Profit <br />
+                            </div>
+                        </div>
+                        <hr className="line" />
+                        <span style={{fontSize: "18px"}} className="in">{income}.00 </span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <span style={{fontSize: "18px"}} className="ex">{expenses}.00 </span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <span style={{fontSize: "18px"}} className="pr">{income - expenses}.00 </span><br />
+                        <hr className="line" />
                     </div>
-                    <div style={{textAlign:"right", fontSize:"20px", fontWeight:"bold"}}>
-                        Expenses - LKR. 
-                        <span>{expenses} </span>
-                    </div>
-                    <div className="balance">
-                        Profit - LKR. 
-                        <span>{income - expenses} </span>
+                    <br />
+                    <div className="buttons">
+                    <button
+                        onClick={() => quickSorting('type')}>
+                            TYPE &nbsp;&nbsp;
+                        <FontAwesomeIcon icon={faSort} />
+                    </button><br />
+                    <button
+                        onClick={()=>sorting('amount')}>
+                            AMOUNT&nbsp;&nbsp;
+                        <FontAwesomeIcon icon={faArrowUp91} />
+                    </button>&nbsp;
                     </div>
                 </div>
                 <br/>
 
             <div className="container">   
-            
                 <table className="table">
-                <thead>
-                  <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Amount(LKR)</th>
-                  <th scope="col" onClick={()=>sorting("type") }>Type</th>
-                  <th scope="col">Category</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Description</th>
-                  <th scope="col" onClick={()=>sorting("reference") }>Reference</th>
-                  <th></th>
-                  <th scope="col">Action</th>
-                  </tr>
-                </thead>
-               
-                    
-                        {data.filter((post) => {
-                            return search.toLowerCase() === ''
-                                ? post
-                                : post.category.toLowerCase().includes(search) ||
-                                  post.type.toLowerCase().includes(search) ||
-                                  post.date.toLowerCase().includes(search) ||
-                                  post.reference.toLowerCase().includes(search) ||
-                                  post.description.toLowerCase().includes(search)
-                        })
-                        .map((post,index) => {
-
-                    return (
-                        <tbody>
+                    <thead>
                         <tr>
-                        <td>{index+1}</td>
-                        <td>{post.amount}.00</td>
-                        <td>{post.type}</td>
-                        <td>{post.category}</td>
-                        <td>{post.date}</td>
-                        <td>{post.description}</td>
-                        <td>{post.reference}</td>
-                        <td >
-                        
-                        <button  style={{width: "80%",
-                                    marginLeft:'10px'                   
-                        }} onClick={() => updatePost(post)}>UPDATE</button>   </td>
-
-                        <td>
-                        <button style={{width: "90%", marginLeft:'-20%', marginTop:""}} onClick={() => deletePost(post._id)}>DELETE</button>
-                        </td>
-                        
-                        
+                            <th scope="col">Id</th>
+                            <th scope="col">Amount(LKR)</th>
+                            <th scope="col" onClick={()=>sorting("type") }>Type</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Description</th>
+                            <th scope="col" onClick={()=>sorting("reference") }>Reference</th>
+                            <th></th>
+                            <th scope="col">Action</th>
                         </tr>
-                        </tbody>
-                             
-                    );
-                })}
+                    </thead> 
+                    {data.filter((post) => {
+                        return search.toLowerCase() === ''
+                            ? post
+                            : post.category.toLowerCase().includes(search) ||
+                              post.type.toLowerCase().includes(search) ||
+                              post.date.toLowerCase().includes(search) ||
+                              post.reference.toLowerCase().includes(search) ||
+                              post.description.toLowerCase().includes(search)
+                    })
+                    .map((post,index) => {
+                        return (
+                            <tbody>
+                                <tr>
+                                    <td>{index+1}</td>
+                                    <td>{post.amount}.00</td>
+                                    <td>{post.type}</td>
+                                    <td>{post.category}</td>
+                                    <td>{post.date}</td>
+                                    <td>{post.description}</td>
+                                    <td>{post.reference}</td>
+                                    <td >
+                                        <button  style={{width: "80%",
+                                                    marginLeft:'10px'                   
+                                        }} onClick={() => updatePost(post)}>UPDATE</button>   
+                                    </td>
+                                    <td>
+                                        <button style={{width: "90%", marginLeft:'-20%', marginTop:""}} onClick={() => deletePost(post._id)}>DELETE</button>
+                                    </td>
+                                </tr>
+                            </tbody>         
+                        );
+                    })}
                 </table>
-                </div>
+                <br /><br />
             </div>
+        </div>
         ) : (
           ""
         )}  

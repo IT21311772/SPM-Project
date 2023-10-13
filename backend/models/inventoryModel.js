@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const inventorySchema = mongoose.Schema(
@@ -37,3 +38,4 @@ const inventorySchema = mongoose.Schema(
 );
 
 module.exports = mongoose.model("Products", inventorySchema);
+

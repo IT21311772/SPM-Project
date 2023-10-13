@@ -1,0 +1,80 @@
+/* Styles for the main navigation container */
+.nav-container {
+    width: 100%;
+    background-color: white;
+}
+
+/* Styles for the entire navigation bar */
+.navbar {
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 80px;
+    width: 90%;
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+/* Styles for the logo */
+#navbar-logo {
+    color: #373B61;
+    justify-self: start;
+    margin-left: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* Styles for the navigation menu */
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    list-style: none;
+    text-align: center;
+    width: 80%;
+    justify-self: end;
+}
+
+/* Styles for each navigation item */
+.nav-links {
+    color: #373B61;
+    text-decoration: none;
+    position: relative;
+    padding: 10px; /* Add padding to make it clickable */
+    margin-bottom: 5%;
+}
+
+/* Styles for the navigation links on hover */
+.nav-links:hover {
+    color: #A7D5E5;
+    transition: all 0.3s; /* Smooth color transition on hover */
+}
+
+/* Styles for the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Change to your desired dropdown background color */
+    border: 1px solid #ccc; /* Add a border */
+    width: 150px; /* Adjust the width as needed */
+    top: 100%; /* Position it below the parent */
+    left: 0;
+    z-index: 1;
+}
+
+/* Styles for the dropdown menu items */
+.dropdown-content a {
+    display: block;
+    color: #373B61;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Show the dropdown menu when the navigation item is hovered */
+.nav-links:hover .dropdown-content {
+    display: block;
+}
+
+.nav-links:hover .dropdown-content:hover .inside-link:hover{
+    background-color: #373B61;
+    color: white;
+}
