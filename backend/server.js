@@ -19,6 +19,15 @@ const userRoutes = require('./routes/userRoutes');
 // Routes
 app.use("/api/Fin", financeRoutes);
 app.use("/api/User", userRoutes);
+const supplierRoutes = require('./routes/supplierRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const inventoryRoutes = require('./routes/inventoryRoutes');
+
+
+// Routes
+app.use("/api/Sup", supplierRoutes);
+app.use("/api/Ord", orderRoutes)
+app.use("/api/Product", inventoryRoutes);
 
 // Connect the database
 mongoose
