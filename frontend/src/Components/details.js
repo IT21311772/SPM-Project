@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import Font
 import { faPlus } from '@fortawesome/free-solid-svg-icons'; // Import the "plus" icon
 import { faSort } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp91 } from '@fortawesome/free-solid-svg-icons';
+import Footer from "./footer";
 
 function App() {
     // Use of useState
@@ -397,6 +398,7 @@ return (
         ) : (
           ""
         )}  
+        <Footer />
   </div>
 );
 }

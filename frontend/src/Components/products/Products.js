@@ -5,11 +5,8 @@ import {Form, InputGroup } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
 import './products.css';
-import Footer from "../footer/footer";
-
-
-
-
+import AdminNavBar from "../AdminNavBar";
+import Footer from "../footer";
 
 function App() {
 // const navigate = useNavigate();
@@ -89,6 +86,7 @@ const sorting = (col) =>{
 
 return (
     <div className="product">
+        <AdminNavBar />
     <div>
         {/* style={{width:"90%", margin: "auto auto", textAlign: "center"}} */}
         
@@ -223,9 +221,8 @@ return (
             </Form>
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style={{borderRadius:"5px", background:"#373B61", padding:"0.5%",border:"#373B61"}}><Link to="/products/add" style={{color:"white", textDecoration:"none"}}>Add New Products</Link></button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style={{borderRadius:"5px", background:"#373B61", padding:"0.5%",border:"#373B61"}}><Link to="/products/report" style={{color:"white", textDecoration:"none"}}>Report</Link></button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style={{borderRadius:"5px", background:"#373B61", padding:"0.5%",border:"#373B61"}}><Link to="/products/LowQuantityItems" style={{color:"white", textDecoration:"none"}}>Restore</Link></button>
+                <button style={{borderRadius:"5px", background:"#373B61", padding:"0.5%",border:"#373B61"}}><Link to="/items/add" style={{color:"white", textDecoration:"none"}}>Add New Products</Link></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button style={{borderRadius:"5px", background:"#373B61", padding:"0.5%",border:"#373B61"}}><Link to="/items/low" style={{color:"white", textDecoration:"none"}}>Restore</Link></button>
           
             
                 <br /><br />

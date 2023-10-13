@@ -9,6 +9,20 @@ import Signup from './Components/Signup';
 import Login from './Components/Login';
 import FinanceChart from './Components/DisplayChart';
 
+import AddSupplier from './Components/suppliers/AddSupplier';
+import SupplierOrder from './Components/suppliers/SupplierOrd';
+import Suppliers from './Components/suppliers/Suppliers';
+import SupplierReport from './Components/suppliers/SuppliersPdf';
+
+import AddOrder from './Components/orders/AddOrder';
+import Order from './Components/orders/Order';
+
+import AddProduct from './Components/products/addProduct';
+import ProductChart from './Components/products/Graphs';
+import LowItems from './Components/products/LowQuantityItems';
+import Products from './Components/products/Products';
+import ProductReport from './Components/products/ProductsPdf';
+
 // Create a context for authentication state
 const AuthContext = createContext();
 
@@ -53,6 +67,24 @@ function App() {
           <Route path="/fin/report" element={<FinanceReport />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+
+          <Route path='/sup' element={<Suppliers />} />
+          <Route path='/sup/add' element={<AddSupplier />} />
+          <Route path='/sup/add/sups' element={<Suppliers />} />
+          <Route path='/sup/supord' element={<SupplierOrder />} />
+          <Route path='/sup/report' element={<SupplierReport />} />
+
+          <Route path='/order' element={<Order />} />
+          <Route path='/order/add' element={<AddOrder />} />
+          <Route path='/order/add/order' element={<Order />} />
+
+          <Route path='/items' element={<Products />} />
+          <Route path='/items/add' element={<AddProduct />} />
+          <Route path='/items/add/items' element={<Products />} />
+          <Route path='/prochart' element={<ProductChart />} />
+          <Route path='/items/low' element={<LowItems />} />
+          <Route path='/items/report' element={<ProductReport />} />
+          
         </Routes>
       </AuthContext.Provider>
     </div>

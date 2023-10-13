@@ -44,8 +44,8 @@ function AdminNavBar() {
                         >
                             <b>Supplier</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance" className='inside-link'>Finance</Link>
-                                <Link to="/inventory" className='inside-link'>Inventory</Link>
+                                <Link to="/sup" className='inside-link'>Suppliers</Link>
+                                <Link to="/sup/report" className='inside-link'>Supplier Report</Link>
                             </div>
                         </div>
                     </li>
@@ -56,8 +56,7 @@ function AdminNavBar() {
                         >
                             <b>Order</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance" className='inside-link'>Finance</Link>
-                                <Link to="/inventory" className='inside-link'>Inventory</Link>
+                                <Link to="/order" className='inside-link'>Orders</Link>
                             </div>
                         </div>
                     </li>
@@ -68,8 +67,8 @@ function AdminNavBar() {
                         >
                             <b>Inventory</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance" className='inside-link'>Finance</Link>
-                                <Link to="/inventory" className='inside-link'>Inventory</Link>
+                                <Link to="/items" className='inside-link'>Inventory</Link>
+                                <Link to="/items/report" className='inside-link'>Product Report</Link>
                             </div>
                         </div>
                     </li>
@@ -80,8 +79,7 @@ function AdminNavBar() {
                         >
                             <b>Stores</b>
                             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-                                <Link to="/finance" className='inside-link'>Finance</Link>
-                                <Link to="/inventory" className='inside-link'>Inventory</Link>
+                                <Link to="/finance" className='inside-link'>Stores</Link>
                             </div>
                         </div>
                     </li>

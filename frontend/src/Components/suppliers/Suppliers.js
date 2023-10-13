@@ -5,7 +5,8 @@ import {Form, InputGroup } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
 import './supplier.css';
-
+import AdminNavBar from "../AdminNavBar";
+import Footer from "../footer";
 
 function App() {
 // const navigate = useNavigate();
@@ -86,6 +87,7 @@ const sorting = (col) =>{
 
   return (
     <div className="product">
+        <AdminNavBar />
     <div>
         {/* style={{width:"90%", margin: "auto auto", textAlign: "center"}} */}
         
@@ -300,6 +302,7 @@ const sorting = (col) =>{
           ""
         )}
     </div>
+    <Footer />
     </div>
 );
 }

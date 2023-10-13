@@ -2,7 +2,7 @@ import { Form } from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
 import { useState } from "react";
 import axios from "axios";
-import './supplier.css';
+import '../suppliers/supplier.css';
 
 function CreatePost () {
     const navigate = useNavigate();
