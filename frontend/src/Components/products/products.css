@@ -1,0 +1,157 @@
+* {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+  background-color: #EDEFFE;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .product-create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-color: #373B61;
+  }
+  
+  .product-create .Create-post {
+  width: 40%;
+  margin: 10%;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #EDEFFE;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  margin-left: 8%;
+  margin-top: 5%;
+  }
+  
+  .product-create .title {
+  font-style: inherit;
+  color: #A7D5E5;
+  font-weight: bold;
+  }
+  
+  
+  .product-create .Form-Group {
+  text-align: left;
+  display: block;
+  }
+  
+  .product-create .Form-Control {
+  width: 80%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  margin-left: 10%;
+  margin-bottom: 4%;
+  }
+  
+  .report{
+  background-color: #EDEFFE;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .product .update{
+  color: white;
+  background-color: black;
+  }
+  
+  .product button:hover{
+  box-shadow: 1px 3px 5px rgba(10, 10, 10, 10);
+  }
+  
+  .product .container button{
+  margin-left: 85%;
+  }
+  
+  .balance{
+  color: #000000;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 10%;
+  }
+  
+  .reportincome{
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 0%;
+  }
+  
+  .reportbalance{
+  font-size: 18px;
+  font-weight: bold;
+  }
+  
+  .product {
+  background-color: #EDEFFE;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .reportTable{
+  margin-left: 8%;
+  width: 87%;
+  }
+  
+  .product body{
+  background-color: #EDEFFE;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .product button{
+  background-color: #373B61;
+  color: #EDEFFE;
+  border: #373B61;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  width: 15%;
+  height: 50%;
+  padding: 3px;
+  font-size: 15px;
+  }
+  
+  .error{
+  color: #dac693;
+  padding-left: 23%;
+  padding-bottom: 2%;
+  }
+  
+  .product .container {
+  background-color: #EDEFFE;
+  }
+  
+  .product .container .content {
+  background-color: #EDEFFE;
+  }
+  
+  .product-report body{
+  background-color: #A7D5E5;
+  }
+
+  
+  .canvasbar {
+    max-width: 50%; 
+    height: 50%; 
+  }
+
+  .canvaspie {
+    max-width: 40%; 
+    height: 40%; 
+  }
+  
+
+  
+  
