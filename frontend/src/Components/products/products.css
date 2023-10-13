@@ -140,5 +140,18 @@
   .product-report body{
   background-color: #A7D5E5;
   }
+
+  
+  .canvasbar {
+    max-width: 50%; 
+    height: 50%; 
+  }
+
+  .canvaspie {
+    max-width: 40%; 
+    height: 40%; 
+  }
+  
+
   
   
