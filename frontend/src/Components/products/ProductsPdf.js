@@ -30,7 +30,7 @@ const componentRef = useRef();
         <>
             <div className="product-report">
             <div ref={componentRef} >
-           <h3 style={{fontWeight:"bold", textAlign:"center", backgroundColor:"#373B61", padding:"3%", marginTop:"-1%", color:"#EDEFFE"}}>Finance Report</h3>
+           <h3 style={{fontWeight:"bold", textAlign:"center", backgroundColor:"#373B61", padding:"3%", marginTop:"-1%", color:"#EDEFFE"}}>Product Report</h3>
                 <br />
                 
                 
