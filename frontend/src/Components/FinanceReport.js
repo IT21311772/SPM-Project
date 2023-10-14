@@ -45,28 +45,36 @@ useEffect(() => {
     });
 
     return (
-        <>
             <div className="report">
             <div ref={componentRef}>
                 <h3 style={{fontWeight:"bold", textAlign:"center", backgroundColor:"#373B61", padding:"3%", marginTop:"-1%", color:"#EDEFFE"}}>Finance Report</h3>
                 <br />
+                    <div className="newContainer">
+                    <div className="balance" style={{marginLeft: "6%"}}>
+                        <div className="data">
+                            <div className="income">
+                                Income &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div className="expense">
+                                Expenses &nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            <div className="profit">
+                                Profit <br />
+                            </div>
+                        </div>
+                        <hr className="line" />
+                        <span style={{fontSize: "18px"}} className="in">{income}.00 </span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                <div className="container">
-                    <div className="reportincome">
-                        Income - LKR.
-                        <span>{income} </span>
-                    </div>
-                    <div className="reportincome">
-                        Expenses - LKR.
-                        <span>{expenses} </span>
-                    </div>
-                    <div className="reportbalance">
-                        Profit - LKR.
-                        <span>{income - expenses} </span>
-                    </div>
-                </div>
+                        <span style={{fontSize: "18px"}} className="ex">{expenses}.00 </span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                <br/>
+                        <span style={{fontSize: "18px"}} className="pr">{income - expenses}.00 </span><br />
+                        <hr className="line" />
+                    </div>
+                    </div>
+                    <br />
+
                 <Table className="reportTable" bordered>
                     <thead>
                         <th className="col">ID</th>
@@ -105,7 +113,6 @@ useEffect(() => {
                 <button style={{borderRadius:"5px", width:"20%", backgroundColor:"#373B61", color:"white"}} onClick={handlePrint}>Download</button>
             </center>
             </div>
-        </>
     );
 };
 

@@ -130,6 +130,13 @@ border-radius: 10%;
   margin-top: 2%;
 }
 
+.report .line{
+  color: #2f86c4;
+  border: 1px solid;
+  margin-bottom: 6%;
+  margin-top: 2%;
+}
+
 .reportincome{
 font-size: 18px;
 font-weight: bold;
